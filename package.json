@@ -24,7 +24,6 @@
     "url": "https://github.com/Sandydht/contact-management-api/issues"
   },
   "homepage": "https://github.com/Sandydht/contact-management-api#readme",
-  "type": "module",
   "dependencies": {
     "@prisma/client": "^6.0.1",
     "bcrypt": "5.1.1",

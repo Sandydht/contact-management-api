@@ -2,6 +2,8 @@ import { Request, Response, NextFunction } from "express";
 import { CreateUserRequest, LoginUserRequest, UpdateUserRequest } from "../model/user-model";
 import { UserService } from "../service/user-service";
 import { UserRequest } from "../type/user-request";
+import { ZodError } from "zod";
+import { ResponseError } from "../error/response-error";
 
 export class UserController {
   static async register(req: Request, res: Response, next: NextFunction) {
@@ -53,12 +55,12 @@ export class UserController {
 
   static async logout(req: UserRequest, res: Response, next: NextFunction) {
     try {
-        await UserService.logout(req.user!);
-        res.status(200).json({
-            data: "OK"
-        })
-    } catch (e) {
-        next(e);
+      await UserService.logout(req.user!);
+      res.status(200).json({
+        data: "OK"
+      });
+    } catch (error) {
+      next(error);
     }
-}
+  }
 }

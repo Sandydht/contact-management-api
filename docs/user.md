@@ -90,8 +90,8 @@ Request Header:
 Request Body:
 ```JSON
 {
-  "password": "password", // Tidak wajib
-  "name": "Sandy Dwi Handoko Trapsilo" // Tidak wajib
+  "password": "password", // optional
+  "name": "Sandy Dwi Handoko Trapsilo" // optional
 }
 ```
 
