@@ -2,7 +2,6 @@ import { AddressTest, ContactTest, UserTest } from "./test-util";
 import supertest from "supertest";
 import { web } from "../src/application/web";
 import { logger } from "../src/application/logging";
-import { add } from "winston";
 
 describe('POST /api/contacts/:contactId/addresses', () => {
   beforeEach(async () => {
