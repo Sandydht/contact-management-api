@@ -6,7 +6,8 @@
   "scripts": {
     "test": "jest --watch",
     "build": "npx tsc",
-    "migrate:dev": "prisma migrate dev"
+    "migrate:dev": "prisma migrate dev",
+    "start": "node dist/main.js"
   },
   "jest": {
     "transform": {

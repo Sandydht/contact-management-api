@@ -20,7 +20,7 @@ describe('POST /api/contacts', () => {
       .send({
         first_name: "test",
         last_name: "test",
-        email: "sandy@example.com",
+        email: "test@example.com",
         phone: "0899999"
       });
 
@@ -106,7 +106,7 @@ describe('PUT /api/contacts/:contactId', () => {
       .set("X-API-TOKEN", 'test')
       .send({
         first_name: "test",
-        last_name: "dwi",
+        last_name: "test",
         email: "test@example.com",
         phone: "9999"
       });
@@ -248,7 +248,7 @@ describe('GET /api/contacts', () => {
     const response = await supertest(web)
       .get("/api/contacts")
       .query({
-        name: "salah"
+        name: "wrong"
       })
       .set("X-API-TOKEN", "test");
 

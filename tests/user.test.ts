@@ -129,7 +129,7 @@ describe('PATCH /api/users/current', () => {
     await UserTest.delete();
   });
 
-  xit('should reject update user if request is invalid', async () => {
+  it('should reject update user if request is invalid', async () => {
     const response = await supertest(web)
       .patch('/api/users/current')
       .set('X-API-TOKEN', 'test')
