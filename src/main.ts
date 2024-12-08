@@ -1,6 +1,8 @@
-import { web } from "./application/web";
-import { logger } from "./application/logging";
+import express from "express";
 
-web.listen(3000, () => {
-  logger.info("Listening on port 3000");
+const app = express();
+
+app.listen(3000, () => {
+  console.log(`App listening on port ${3000}`);
 });
+
