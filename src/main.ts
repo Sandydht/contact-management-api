@@ -1,10 +1,7 @@
-import express from "express";
+import createServer from "./Infrastructures/http/createServer";
 
-const app = express();
+const port = 3000;
 
-app.use(express.json());
-
-app.listen(3000, () => {
-  console.log(`App listening on port ${3000}`);
+createServer.listen(port, () => {
+  console.log(`App listening on port ${port}`);
 });
-
