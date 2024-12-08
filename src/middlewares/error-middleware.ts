@@ -1,6 +1,6 @@
 import { NextFunction, Request, Response } from "express";
 import { ZodError } from "zod";
-import ResponseError from "../errors/ResponseError";
+import ResponseError from "../errors/response-error";
 
 const errorMiddleware = async (error: Error, req: Request, res: Response, next: NextFunction) => {
   if (error instanceof ZodError) {

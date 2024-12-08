@@ -18,7 +18,7 @@ export interface LoginUserRequest {
   password: string;
 }
 
-export type UpdateUserRequest = {
+export interface UpdateUserRequest {
   name?: string;
   password?: string;
 }

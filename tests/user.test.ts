@@ -149,8 +149,8 @@ describe('PATCH /api/users/current', () => {
       .patch("/api/users/current")
       .set("X-API-TOKEN", "salah")
       .send({
-        password: "benar",
-        name: "benar"
+        password: "test",
+        name: "test"
       });
 
     logger.debug(response.body);
@@ -163,12 +163,12 @@ describe('PATCH /api/users/current', () => {
       .patch("/api/users/current")
       .set("X-API-TOKEN", "test")
       .send({
-        name: "benar"
+        name: "test"
       });
 
     logger.debug(response.body);
     expect(response.status).toBe(200);
-    expect(response.body.data.name).toBe("benar");
+    expect(response.body.data.name).toBe("test");
   });
 
   it('should be able to update user password', async () => {
@@ -176,14 +176,14 @@ describe('PATCH /api/users/current', () => {
       .patch("/api/users/current")
       .set("X-API-TOKEN", "test")
       .send({
-        password: "benar"
+        password: "password"
       });
 
     logger.debug(response.body);
     expect(response.status).toBe(200);
 
     const user = await UserTest.get();
-    expect(await bcrypt.compare("benar", user.password)).toBe(true);
+    expect(await bcrypt.compare("password", user.password)).toBe(true);
   });
 });
 
@@ -212,7 +212,7 @@ describe('DELETE /api/users/current', () => {
   it('should reject logout user if token is wrong', async () => {
     const response = await supertest(web)
       .delete("/api/users/current")
-      .set("X-API-TOKEN", "salah");
+      .set("X-API-TOKEN", "wrong");
 
     logger.debug(response.body);
     expect(response.status).toBe(401);

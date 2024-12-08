@@ -3,7 +3,7 @@ import { CreateUserRequest, CreateUserResponse, LoginUserRequest, toUserResponse
 import { prismaClient } from "../applications/database";
 import Validation from "../validators/validation";
 import UserValidator from "../validators/user-validator";
-import ResponseError from "../errors/ResponseError";
+import ResponseError from "../errors/response-error";
 import jwt from "jsonwebtoken";
 import { User } from "@prisma/client";
 
