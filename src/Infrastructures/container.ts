@@ -1,7 +1,6 @@
 import { createContainer } from "instances-container";
 import UserRepository from "../Domains/users/UserRepository";
 import UserRepositorySQL from "./repository/UserRepositorySQL";
-import { v4 as uuidV4 } from "uuid";
 import AddUserUseCase from "../Applications/use_case/AddUserUseCase";
 import PasswordHash from "../Applications/security/PasswordHash";
 import prismaClient from "./database/prismaClient";
@@ -16,10 +15,7 @@ container.register([
       dependencies: [
         {
           concrete: prismaClient,
-        },
-        {
-          concrete: uuidV4,
-        },
+        }
       ],
     },
   },

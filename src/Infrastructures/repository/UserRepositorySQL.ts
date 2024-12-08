@@ -6,12 +6,10 @@ import { RegisterUser } from "../../Domains/users/entities/RegisterUser";
 
 class UserRepositorySQL extends UserRepository {
   private prisma: PrismaClient;
-  private idGenerator: () => string;
 
-  constructor(prisma: PrismaClient, idGenerator: () => string) {
+  constructor(prisma: PrismaClient) {
     super();
     this.prisma = prisma;
-    this.idGenerator = idGenerator;
   }
 
   async verifyAvailableUsername(username: string): Promise<any> {

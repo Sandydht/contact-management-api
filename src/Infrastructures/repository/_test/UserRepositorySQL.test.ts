@@ -14,12 +14,12 @@ describe('UserRepositorySQL', () => {
   describe('verifyAvailableUsername function', () => {
     it('should throw InvariantError when username not available', async () => {
       await UserTableTestHelper.addUser({ username: 'test', password: 'password', name: 'test' });
-      const userRepositorySQL = new UserRepositorySQL(prisma, () => '');
+      const userRepositorySQL = new UserRepositorySQL(prisma);
       await expect(userRepositorySQL.verifyAvailableUsername('test')).rejects.toThrow(InvariantError);
     });
 
     it('should not throw InvariantError when username available', async () => {
-      const userRepositorySQL = new UserRepositorySQL(prisma, () => '');
+      const userRepositorySQL = new UserRepositorySQL(prisma);
       await expect(userRepositorySQL.verifyAvailableUsername('test')).resolves.not.toThrow(InvariantError);
     });
   });
@@ -32,7 +32,7 @@ describe('UserRepositorySQL', () => {
         name: 'test'
       };
 
-      const userRepositorySQL = new UserRepositorySQL(prisma, () => '');
+      const userRepositorySQL = new UserRepositorySQL(prisma);
       
       await userRepositorySQL.addUser(payload);
 
@@ -47,7 +47,7 @@ describe('UserRepositorySQL', () => {
         name: 'test'
       };
 
-      const userRepositorySQL = new UserRepositorySQL(prisma, () => '');
+      const userRepositorySQL = new UserRepositorySQL(prisma);
       
       const addedUser = await userRepositorySQL.addUser(payload);
       expect(addedUser).toStrictEqual({
