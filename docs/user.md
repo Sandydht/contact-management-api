@@ -6,9 +6,9 @@ Endpoint: POST /api/users
 Request Body:
 ```JSON
 {
-  "username": "sandy",
+  "username": "test",
   "password": "password",
-  "name": "Sandy Dwi Handoko Trapsilo"
+  "name": "test"
 }
 ```
 
@@ -16,8 +16,8 @@ Response Body (Success):
 ```JSON
 {
   "data": {
-    "username": "sandy",
-    "name": "Sandy Dwi Handoko Trapsilo"
+    "username": "test",
+    "name": "test"
   }
 }
 ```
@@ -35,7 +35,7 @@ Endpoint: POST /api/users/login
 Request Body:
 ```JSON
 {
-  "username": "sandy",
+  "username": "test",
   "password": "password"
 }
 ```
@@ -44,8 +44,8 @@ Response Body (Success):
 ```JSON
 {
   "data": {
-    "username": "sandy",
-    "name": "Sandy Dwi Handoko Trapsilo",
+    "username": "test",
+    "name": "test",
     "token": "uuid"
   }
 }
@@ -68,8 +68,8 @@ Response Body (Success):
 ```JSON
 {
   "data": {
-    "username": "sandy",
-    "name": "Sandy Dwi Handoko Trapsilo"
+    "username": "test",
+    "name": "test"
   }
 }
 ```
@@ -91,7 +91,7 @@ Request Body:
 ```JSON
 {
   "password": "password", // optional
-  "name": "Sandy Dwi Handoko Trapsilo" // optional
+  "name": "test" // optional
 }
 ```
 
@@ -99,8 +99,8 @@ Response Body (Success):
 ```JSON
 {
   "data": {
-    "username": "sandy",
-    "name": "Sandy Dwi Handoko Trapsilo"
+    "username": "test",
+    "name": "test"
   }
 }
 ```

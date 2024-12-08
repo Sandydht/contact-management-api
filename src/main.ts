@@ -1,7 +1,8 @@
-import createServer from "./Infrastructures/http/createServer";
+import logger from "./applications/logging";
+import web from "./applications/web";
 
 const port = 3000;
 
-createServer.listen(port, () => {
-  console.log(`App listening on port ${port}`);
+web.listen(port, () => {
+  logger.info(`App listening on port ${port}`);
 });
