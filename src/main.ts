@@ -1,10 +1,8 @@
-import express from "express";
+import logger from "./applications/logging";
+import web from "./applications/web";
 
-const app = express();
+const port = 3000;
 
-app.use(express.json());
-
-app.listen(3000, () => {
-  console.log(`App listening on port ${3000}`);
+web.listen(port, () => {
+  logger.info(`App listening on port ${port}`);
 });
-
